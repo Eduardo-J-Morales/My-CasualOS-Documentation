@@ -25,6 +25,7 @@ function App() {
       </div>
       <div id="contenido">
       <h1 class="text-3xl font-bold mb-4">Título del Artículo</h1>
+      <p class="text-gray-700 mb-4"> Este es un ejemplo de un artículo de documentación. Aquí puedes escribir el contenido de tu artículo. </p>
         {content()}
       </div>
     </div>
