@@ -24,6 +24,7 @@ function App() {
         ))}
       </div>
       <div id="contenido">
+      <h1 class="text-3xl font-bold mb-4">Título del Artículo</h1>
         {content()}
       </div>
     </div>
