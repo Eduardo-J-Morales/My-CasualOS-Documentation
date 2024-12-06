@@ -1,32 +1,79 @@
-import { createSignal } from 'solid-js';
+import { createSignal } from "solid-js";
 
 function App() {
-  const [content, setContent] = createSignal('');
-  const [Name, setName] = createSignal('');
+  const [content, setContent] = createSignal(null);
+  const [name, setName] = createSignal(null);
 
- const whispers = [
-    { name: 1, content: 'Whisper 1' },
-    { name: 2, content: 'Whisper 2' },
-    { name: 3, content: 'Whisper 3' },
-  ]
+  const whispers = [
+    { name: 2, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+    { name: 3, content: "" },
+  ];
 
   const handleContent = (id) => {
-    setContent(whispers.find(whisper => whisper.name === id)?.content);
-    setName(whispers.find(whisper => whisper.name === id)?.name);
-  }
+    setContent(whispers.find((whisper) => whisper.name === id)?.content);
+    setName(whispers.find((whisper) => whisper.name === id)?.name);
+  };
   return (
-    <div class="max-w-4xl mx-auto p-8 shadow-md rounded-lg">
-        <div className="justify-center space-x-4 p-4 bg-gray-100">
-        {whispers.map(item => (
-          <button 
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-opacity-50"
+    <div>
+      <div  class=" flex flex-wrap px-4 py-2">
+        {whispers.map((item) => (
+          <div  class="px-4 py-2">
+          <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-opacity-50" 
           onClick={() => handleContent(item.name)}>{item.name}</button>
+          </div>
         ))}
       </div>
-      <div id="contenido">
-      <h1 class="text-3xl font-bold mb-4">Título del Artículo</h1>
-      <p class="text-gray-700 mb-4"> Este es un ejemplo de un artículo de documentación. Aquí puedes escribir el contenido de tu artículo. </p>
-        {content()}
+      <div class={`max-w-4xl mx-auto p-8 rounded-lg`}>
+        <h1 class="text-3xl font-bold mb-4">{name()}</h1>
+        <p class="text-gray-700 mb-4">{content()}</p>
       </div>
     </div>
   );
