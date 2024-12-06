@@ -15,7 +15,7 @@ function App() {
     setName(whispers.find(whisper => whisper.name === id)?.name);
   }
   return (
-    <div>
+    <div class="max-w-4xl mx-auto p-8 shadow-md rounded-lg">
         <div className="justify-center space-x-4 p-4 bg-gray-100">
         {whispers.map(item => (
           <button 
