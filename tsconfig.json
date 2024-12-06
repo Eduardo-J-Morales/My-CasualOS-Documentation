@@ -10,13 +10,6 @@
   "compilerOptions": {
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "noImplicitAny": false,
-    "strictNullChecks": false,
-    "noImplicitThis": false,
-    "alwaysStrict": false,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noImplicitReturns": false,
-    "noFallthroughCasesInSwitch": false
+ 
   }
 }
