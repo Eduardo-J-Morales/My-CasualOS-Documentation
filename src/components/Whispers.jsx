@@ -262,9 +262,145 @@ let that: {
 };` 
   },
   { 
-    name: "", 
-    content: ``,
-    code: `` 
+    name: "@onDrag", 
+    content: `A whisper that is sent whenever a bot is starting to be dragged.`,
+    code: `let that: {
+  bot: Bot,
+  face: 'left' | 'right' | 'front' | 'back' | 'top' | 'bottom',
+  from: {
+    x: number,
+    y: number,
+    dimension: string
+  },
+  uv: Vector2
+};` 
+  },
+  { 
+    name: "@onDragging", 
+    content: `A whisper that is sent whenever a bot would be moved while dragging.
+    Note that this whisper is only sent for drag operations that have called os.enableCustomDragging().`,
+    code: `let that: {
+  bot: Bot,
+  to: {
+    x: number,
+    y: number,
+    bot: Bot,
+    dimension: string
+  },
+  from: {
+    x: number,
+    y: number,
+    dimension: string
+  }
+};` 
+  },
+  { 
+    name: "@onDrop", 
+    content: `A whisper that is sent whenever a bot has been dropped after being dragged. 
+    The whisper is sent to both the bot that was dropped and the bot that was dropped on.`,
+    code: `let that: {
+  bot: Bot,
+  to: {
+    bot: Bot,
+    x: number,
+    y: number,
+    dimension: string
+  },
+  from: {
+    x: number,
+    y: number,
+    dimension: string
+  }
+};` 
+  },
+  { 
+    name: "@onDropEnter", 
+    content: `A whisper that is sent to both bots when a bot is dragged onto another bot.`,
+    code: `let that: {
+  dragBot: Bot,
+  to: {
+    bot: Bot,
+    x: number,
+    y: number,
+    dimension: string
+  },
+  from: {
+    x: number,
+    y: number,
+    dimension: string
+  }
+};` 
+  },
+  { 
+    name: "@onDropExit", 
+    content: `A whisper that is sent to both bots when a bot is dragged off of another bot.`,
+    code: `let that: {
+  dragBot: Bot,
+  to: {
+    bot: Bot,
+    x: number,
+    y: number,
+    dimension: string
+  },
+  from: {
+    x: number,
+    y: number,
+    dimension: string
+  }
+};` 
+  },
+  { 
+    name: "@onSaveInput", 
+    content: `A whisper that is sent when the input box for a bot has been changed by the user.`,
+    code: `let that = null;` 
+  },
+  { 
+    name: "@onCloseInput", 
+    content: `A whisper that is sent when the input box for a bot has been closed by the user.`,
+    code: `let that = null;` 
+  },
+  { 
+    name: "@onListen", 
+    content: `A whisper that is sent whenever this bot receives a whisper or shout.`,
+    code: `let that: {
+  name: string,
+  that: any,
+  targets: Bot[],
+  listeners: Bot[],
+  responses: any[]
+};` 
+  },
+  { 
+    name: "@onMaxLODEnter", 
+    content: `A whisper that is sent whenever a bot enters its maximum Level-Of-Detail.`,
+    code: `let that: {
+  bot: Bot,
+  dimension: string
+};` 
+  },
+  { 
+    name: "@onMinLODEnter", 
+    content: `A whisper that is sent whenever a bot enters its minimum Level-Of-Detail.`,
+    code: `let that: {
+  bot: Bot,
+  dimension: strin
+};` 
+  },
+  { 
+    name: "@onMaxLODExit", 
+    content: `A whisper that is sent whenever a bot exits its maximum Level-Of-Detail.`,
+    code: `let that: {
+  bot: Bot,
+  dimension: string
+};` 
+  },
+  { 
+    name: "@onMinLODExit", 
+    content: `A whisper that is sent whenever a bot exits its minimum Level-Of-Detail.`,
+    code: `let that: {
+  bot: Bot,
+  dimension: string
+};` 
   },
   { 
     name: "", 
@@ -326,7 +462,12 @@ let that: {
     content: ``,
     code: `` 
   },
-
+  { 
+    name: "", 
+    content: ``,
+    code: `` 
+  },
+  
 
   ];
 
